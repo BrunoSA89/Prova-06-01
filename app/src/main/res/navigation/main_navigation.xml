@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/cadastroReceita">
+
+    <fragment
+        android:id="@+id/cadastroReceita"
+        android:name="com.example.provatecnica06_01.CadastroReceita"
+        android:label="CadastroReceita"
+        tools:layout="@layout/cadastro_receita">
+        <action
+            android:id="@+id/action_cadastroReceita_to_telaReceita"
+            app:destination="@id/telaReceita" />
+        <action
+            android:id="@+id/action_cadastroReceita_to_listaReceita2"
+            app:destination="@id/listaReceita" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/telaReceita"
+        android:name="com.example.provatecnica06_01.TelaReceita"
+        android:label="TelaReceita"
+        tools:layout="@layout/tela_receita">
+        <action
+            android:id="@+id/action_telaReceita_to_cadastroReceita"
+            app:destination="@id/cadastroReceita" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/listaReceita"
+        android:name="com.example.provatecnica06_01.ListaReceita"
+        android:label="ListaReceita"
+        tools:layout="@layout/lista_de_receita">
+        <action
+            android:id="@+id/action_listaReceita_to_recyclerReceitas2"
+            app:destination="@id/recyclerReceitas" />
+        <action
+            android:id="@+id/action_listaReceita_to_cadastroReceita"
+            app:destination="@id/cadastroReceita" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/recyclerReceitas"
+        android:name="com.example.provatecnica06_01.RecyclerReceitas"
+        android:label="RecyclerReceitas"
+        tools:layout="@layout/recycler_receitas">
+        <action
+            android:id="@+id/action_recyclerReceitas_to_cadastroReceita"
+            app:destination="@id/cadastroReceita" />
+    </fragment>
+</navigation>
