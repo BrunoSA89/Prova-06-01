@@ -2,34 +2,30 @@ package com.example.provatecnica06_01.Model
 
 import android.os.Parcel
 import android.os.Parcelable
+import android.view.View
+import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter
 
-class ProfileAdapter() : RecyclerView.Adapter<RecyclerView.ViewHolder>(), Parcelable {
+class ProfileAdapter() : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    private lateinit var items: List<ProfileAdapter>
+    private lateinit var items: List<Profile>
 
-    constructor(parcel: Parcel) : this() {
-    }
-
-    override fun writeToParcel(parcel: Parcel, flags: Int) {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
 
     }
 
-    override fun describeContents(): Int {
-        return 0
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+
     }
 
-    companion object CREATOR : Parcelable.Creator<ProfileAdapter> {
-        override fun createFromParcel(parcel: Parcel): ProfileAdapter {
-            return ProfileAdapter(parcel)
-        }
+    override fun getItemCount(): Int {
+        return items.size
+    }
 
-        override fun newArray(size: Int): Array<ProfileAdapter?> {
-            return arrayOfNulls(size)
-        }
-        override fun getItemCount(): Int {
-            return items.size
-        }
+    class ProfileViewHolder constructor(
+        itemView: View
+    ) : RecyclerView.ViewHolder(itemView) {
+        
     }
 }
